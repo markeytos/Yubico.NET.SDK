@@ -383,7 +383,7 @@ namespace Yubico.YubiKey.TestApp.Plugins.Otp
                 url = url.Replace("&", "^&");
                 _ = Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
             }
-            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) || System.OperatingSystem.IsMacCatalyst())
             {
                 _ = Process.Start("open", url);
             }

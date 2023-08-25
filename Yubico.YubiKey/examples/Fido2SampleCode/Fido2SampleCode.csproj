@@ -20,7 +20,9 @@ limitations under the License. -->
     <Nullable>disable</Nullable>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<NoWarn>@(NoWarn);NU5105;NU5104;CA1305;CA1859;CA1860;CA1510;CA1861;CA1862;VSSpell001</NoWarn>
+	</PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\SharedSampleCode\SharedSampleCode.csproj" />
   </ItemGroup>

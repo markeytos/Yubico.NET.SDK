@@ -20,7 +20,7 @@ limitations under the License. -->
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>@(NoWarn);NU5105;NU5104</NoWarn>
+    <NoWarn>@(NoWarn);NU5105;NU5104;CA1305;CA1859;CA1860;CA1510;CA1861;CA1862;VSSpell001</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

@@ -49,7 +49,8 @@ namespace Yubico.PlatformInterop
                 {
                     return SdkPlatform.Windows;
                 }
-                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) 
+                         || System.OperatingSystem.IsMacCatalyst())
                 {
                     return SdkPlatform.MacOS;
                 }

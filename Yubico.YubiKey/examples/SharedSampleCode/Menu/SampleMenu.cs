@@ -92,10 +92,7 @@ namespace Yubico.YubiKey.Sample.SharedCode
         // counting at 0.
         public int RunMenu(string title, string[] menuItems)
         {
-            if (menuItems is null)
-            {
-                throw new ArgumentNullException(nameof(menuItems));
-            }
+            ArgumentNullException.ThrowIfNull(menuItems);
 
             _invalidCount = 0;
 
@@ -217,10 +214,7 @@ namespace Yubico.YubiKey.Sample.SharedCode
         // If the buffer is big enough, return it.
         public static char[] AppendChar(char currentChar, char[] inputData, ref int dataLength)
         {
-            if (inputData is null)
-            {
-                throw new ArgumentNullException(nameof(inputData));
-            }
+            ArgumentNullException.ThrowIfNull(inputData);
 
             char[] currentBuffer = inputData;
             if (dataLength >= inputData.Length)

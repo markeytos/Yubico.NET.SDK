@@ -21,7 +21,7 @@ limitations under the License. -->
     As of 2020, netstandard2.0 allows us to reach the widest audience while providing a large
     enough set of the .NET library to be productive.
     -->
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net47</TargetFrameworks>
+    <TargetFrameworks>net6.0</TargetFrameworks>
 
     <RootNamespace></RootNamespace>
 
@@ -55,6 +55,53 @@ limitations under the License. -->
 
   <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <NoWarn>@(NoWarn);NU5105;CA1305;CA1859;CA1860;CA1510;CA1861;CA1862;VSSpell001;CA1854</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.1|AnyCPU'">
+    <NoWarn>@(NoWarn);NU5105;CA1305;CA1859;CA1860;CA1510;CA1861;CA1862;VSSpell001;CA1854</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0|AnyCPU'">
+    <NoWarn>@(NoWarn);NU5105;CA1305;CA1859;CA1860;CA1510;CA1861;CA1862;VSSpell001;CA1854</NoWarn>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <NoWarn>@(NoWarn);NU5105;CA1305;CA1859;CA1860;CA1510;CA1861;CA1862;VSSpell001;CA1854</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.1|AnyCPU'">
+    <NoWarn>@(NoWarn);NU5105;CA1305;CA1859;CA1860;CA1510;CA1861;CA1862;VSSpell001;CA1854</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net47|AnyCPU'">
+    <NoWarn>@(NoWarn);NU5105;CA1305;CA1859;CA1860;CA1510;CA1861;CA1862;VSSpell001;CA1854</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='ReleaseWithDocs|netstandard2.0|AnyCPU'">
+    <NoWarn>@(NoWarn);NU5105;CA1305;CA1859;CA1860;CA1510;CA1861;CA1862;VSSpell001;CA1854</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='ReleaseWithDocs|netstandard2.1|AnyCPU'">
+    <NoWarn>@(NoWarn);NU5105;CA1305;CA1859;CA1860;CA1510;CA1861;CA1862;VSSpell001;CA1854</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='ReleaseWithDocs|net47|AnyCPU'">
+    <NoWarn>@(NoWarn);NU5105;CA1305;CA1859;CA1860;CA1510;CA1861;CA1862;VSSpell001;CA1854</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0|AnyCPU'">
+    <NoWarn>@(NoWarn);NU5105;CA1305;CA1859;CA1860;CA1510;CA1861;CA1862;VSSpell001;CA1854</NoWarn>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='ReleaseWithDocs|net6.0|AnyCPU'">
+    <NoWarn>@(NoWarn);NU5105;CA1305;CA1859;CA1860;CA1510;CA1861;CA1862;VSSpell001;CA1854</NoWarn>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <PropertyGroup Label="DocFX settings" Condition="$(Configuration.Contains('WithDocs')) and $(TargetFramework)=='netstandard2.0'">

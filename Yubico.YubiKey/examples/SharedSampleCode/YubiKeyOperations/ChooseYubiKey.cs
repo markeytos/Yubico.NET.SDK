@@ -51,10 +51,7 @@ namespace Yubico.YubiKey.Sample.SharedCode
             Transport transport,
             ref IYubiKeyDevice? yubiKeyChosen)
         {
-            if (menuObject is null)
-            {
-                throw new ArgumentNullException(nameof(menuObject));
-            }
+            ArgumentNullException.ThrowIfNull(menuObject);
 
             // Find all currently connected YubiKeys.
             IEnumerable<IYubiKeyDevice> yubiKeyEnumerable = YubiKeyDevice.FindByTransport(transport);
